@@ -1,9 +1,9 @@
-async function ShowTwentyPokemon() {
-    for (let i = 1; i < 21; i++) {
+let stop = 0;
+async function showPokemon() {
+    stop += 12
+    for (let i = 1; i < stop + 1; i++) {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon-form/${i}`)
         const pokemon = await response.json()
-        console.log(pokemon.name)
-        console.log(pokemon.sprites.front_default)
         
 
         const pokedex = document.querySelector('.pokedex');
@@ -35,7 +35,11 @@ async function ShowTwentyPokemon() {
 
         pokedex.appendChild(card)
     }
-   
+
+    
 }
 
-ShowTwentyPokemon()
+showPokemon()
+const loadButton = document.querySelector('#loadButton');
+loadButton.addEventListener('click', showPokemon);
+

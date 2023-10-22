@@ -20,3 +20,18 @@
     border: 1px solid black;
     padding: 5px;
 }
+
+#loadButton {
+    display: block;
+    margin: 10px auto;
+    border: none;
+    color: white;
+    background-color: black;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+}
+
+#loadButton:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
