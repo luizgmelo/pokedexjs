@@ -1,7 +1,8 @@
+let start = 1;
 let stop = 0;
 async function showPokemon() {
     stop += 12
-    for (let i = 1; i < stop + 1; i++) {
+    for (let i = start; i < stop + 1; i++) {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon-form/${i}`)
         const pokemon = await response.json()
         
@@ -34,8 +35,8 @@ async function showPokemon() {
         card.appendChild(img)
 
         pokedex.appendChild(card)
+        start += 1
     }
-
     
 }
 
